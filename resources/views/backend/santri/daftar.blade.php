@@ -18,6 +18,7 @@
                     <thead>
                         <tr>
                             <th>No</th>
+                            <th>NIS</th>
                             <th>Nama</th>
                             <th>No. Daftar</th>
                             <th>NIK</th>
@@ -36,6 +37,7 @@
                         @forelse ($santris as $santri)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
+                            <td>{{ $santri->nis }}</td>
                             <td>{{ $santri->nama_lengkap }}</td>
                             <td>{{ $santri->nomor_pendaftaran }}</td>
                             <td>{{ $santri->nik }}</td>

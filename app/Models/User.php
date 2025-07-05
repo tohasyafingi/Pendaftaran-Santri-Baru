@@ -52,6 +52,12 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+// User.php
+public function santri()
+{
+    return $this->hasOne(Santri::class, 'email', 'email');
+}
+
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()

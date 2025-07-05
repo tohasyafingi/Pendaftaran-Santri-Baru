@@ -14,11 +14,14 @@
         @if (auth()->user()->role === 'santri')
         <li><a href="{{ route('santri.dashboard') }}">Dashboard</a></li>
         <li><a href="{{ route('santri.identitas') }}">Identitas</a></li>
+        @if (auth()->user()->role === 'santri' && in_array(optional(auth()->user()->santri)->status, ['terima', 'aktif']))
+        <li><a href="/santri/daftar-ulang">Daftar Ulang</a></li>
+        @endif
         <li>
-        <form method="POST" action="{{ route('logout') }}">
-        @csrf
-        <button type="submit">Logout</button>
-        </form>
+          <form method="POST" action="{{ route('logout') }}">
+          @csrf
+          <button type="submit">Logout</button>
+          </form>
         </li>
       @endif
     @else

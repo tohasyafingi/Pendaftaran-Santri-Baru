@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('santris', function (Blueprint $table) {
             $table->id();
 
-            $table->string('nomor_pendaftaran', 10)->unique(); 
+            $table->string('nomor_pendaftaran', 10)->unique();
+            $table->string('nis')->nullable()->unique(); // letakkan di sini langsung
+
             $table->string('nama_lengkap');
             $table->string('nik');
             $table->enum('jenis_kelamin', ['L', 'P']);
@@ -38,10 +40,13 @@ return new class extends Migration
             $table->string('pas_foto')->nullable();
             $table->string('kk')->nullable();
             $table->string('akta_kelahiran')->nullable();
+            $table->string('bukti_daftar')->nullable(); 
+            $table->string('bukti_daftar_ulang')->nullable(); 
 
             $table->date('tanggal_pendaftaran')->nullable();
-            $table->string('info')->nullable(); 
-            $table->enum('status', ['terima', 'tolak', 'proses'])->default('proses');
+            $table->string('info')->nullable();
+
+            $table->enum('status', ['proses', 'terima', 'tolak', 'aktif'])->default('proses');
 
             $table->timestamps();
         });

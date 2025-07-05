@@ -18,8 +18,9 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Nama</th>
+                            <th>NIS</th>
                             <th>No. Daftar</th>
+                            <th>Nama</th>
                             <th>NIK</th>
                             <th>JK</th>
                             <th>TTL</th>
@@ -33,11 +34,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($santris->where('status', 'terima') as $santri)
+                        @forelse ($santris->where('status', 'aktif') as $santri)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $santri->nama_lengkap }}</td>
+                            <td>{{ $santri->nis }}</td>
                             <td>{{ $santri->nomor_pendaftaran }}</td>
+                            <td>{{ $santri->nama_lengkap }}</td>
                             <td>{{ $santri->nik }}</td>
                             <td>{{ $santri->jenis_kelamin == 'L' ? 'Laki-laki' : 'Perempuan' }}</td>
                             <td>{{ $santri->tempat_lahir }}, {{ \Carbon\Carbon::parse($santri->tanggal_lahir)->format('d-m-Y') }}</td>

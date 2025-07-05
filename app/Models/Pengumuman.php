@@ -15,11 +15,15 @@ class Pengumuman extends Model
     protected static $logOnlyDirty = true;
     protected $fillable = ['judul', 'img', 'isi'];
 
+    public function santris()
+    {
+        return $this->belongsToMany(Santri::class, 'pengumuman_santri');
+    }
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()
-            ->logOnly(['*']) 
-            ->useLogName('Pengumuman') 
+            ->logOnly(['*'])
+            ->useLogName('Pengumuman')
             ->logOnlyDirty();
     }
 }
