@@ -27,15 +27,15 @@
                 <br>
                 <small>
                     @if($santri->status == 'aktif')
-                        🎉 Selamat! NIS Anda: <strong>{{ $santri->nis }}</strong>
+                        🎉 Selamat anda telah diterima! NIS Anda: <strong>{{ $santri->nis }}</strong>
                     @elseif($santri->status == 'terima' && !$santri->bukti_daftar_ulang)
-                        🎉 Anda diterima. Silakan daftar ulang.
+                        🎉 Anda diterima. Silakan daftar ulang di menu daftar ulang
                     @elseif($santri->status == 'terima' && $santri->bukti_daftar_ulang)
-                        ⏳ Bukti daftar ulang diproses admin.
+                        ⏳ Bukti daftar ulang diproses admin, waktu verifikasi maksimal 2x24 jam.
                     @elseif($santri->status == 'tolak')
                         ❗ Maaf, Anda tidak lolos seleksi.
                     @else
-                        ⏳ Data Anda sedang diverifikasi.
+                        ⏳ Data Anda sedang diverifikasi, waktu verifikasi maksimal 2x24 jam.
                     @endif
                 </small>
             </div>

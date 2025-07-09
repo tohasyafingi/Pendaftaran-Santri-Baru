@@ -171,20 +171,36 @@
                             <label for="info" class="form-label">Kirim Pesan</label>
                             <input type="text" name="info" class="form-control" value="{{ old('info', $santri->info) }}">
                         </div>
+<div class="col-md-6 mb-3">
+    <label for="status" class="form-label">Status</label>
+    <div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="status" id="status_proses" value="proses" {{ old('status', $santri->status) == 'proses' ? 'checked' : '' }}>
+            <label class="form-check-label" for="status_proses">
+                Proses
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="status" id="status_terima" value="terima" {{ old('status', $santri->status) == 'terima' ? 'checked' : '' }}>
+            <label class="form-check-label" for="status_terima">
+                Terima
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="status" id="status_tolak" value="tolak" {{ old('status', $santri->status) == 'tolak' ? 'checked' : '' }}>
+            <label class="form-check-label" for="status_tolak">
+                Tolak
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="status" id="status_aktif" value="aktif" {{ old('status', $santri->status) == 'aktif' ? 'checked' : '' }}>
+            <label class="form-check-label" for="status_aktif">
+                Aktif
+            </label>
+        </div>
+    </div>
+</div>
 
-                        <div class="col-md-6 mb-3">
-                            <label for="status" class="form-label">Status</label>
-                            <select name="status" class="form-select">
-                                <option value="proses" {{ old('status', $santri->status) == 'proses' ? 'selected' : '' }}>
-                                    Proses</option>
-                                <option value="terima" {{ old('status', $santri->status) == 'terima' ? 'selected' : '' }}>
-                                    Terima</option>
-                                <option value="tolak" {{ old('status', $santri->status) == 'tolak' ? 'selected' : '' }}>Tolak
-                                </option>
-                                <option value="aktif" {{ old('status', $santri->status) == 'aktif' ? 'selected' : '' }}>Aktif
-                                </option>
-                            </select>
-                        </div>
                     </div>
 
                     <button type="submit" class="btn btn-primary mt-3">Update</button>

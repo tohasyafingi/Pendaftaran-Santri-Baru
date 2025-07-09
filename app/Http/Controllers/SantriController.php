@@ -61,7 +61,7 @@ class SantriController extends Controller
                 'tempat_lahir'     => 'required|string|max:255',
                 'tanggal_lahir'    => 'required|date',
                 'no_hp'            => 'required|digits_between:10,15',
-                'email' => 'required|email|unique:users,email|unique:santris,email',
+                'email'            => 'required|email|unique:users,email|unique:santris,email',
                 'alamat'           => 'required|string',
                 'nama_ayah'        => 'required|string|max:255',
             ]);
@@ -157,6 +157,9 @@ class SantriController extends Controller
         }
         if ($request->hasFile('akta_kelahiran')) {
             $data['akta_kelahiran'] = $request->file('akta_kelahiran')->store('berkas/akta', 'public');
+        }
+        if ($request->hasFile('bukti_daftar')) {
+            $data['bukti_daftar'] = $request->file('bukti_daftar')->store('berkas/bukti_daftar', 'public');
         }
 
         $santri->update($data);

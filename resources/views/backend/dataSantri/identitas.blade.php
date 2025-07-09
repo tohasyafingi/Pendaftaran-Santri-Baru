@@ -207,12 +207,12 @@
                             <input type="file" name="bukti_daftar" class="form-control" accept=".jpg,.jpeg,.png,.pdf"
                                 onchange="previewFile(this, '#preview-bukti_daftar')">
                             <div class="mt-2">
-                                {{-- @if($santri->kk)
-                                    <a href="{{ asset('storage/' . $santri->kk) }}" target="_blank" id="preview-kk"
-                                        class="d-block">📄 Lihat File KK</a>
+                                @if($santri->kk)
+                                    <a href="{{ asset('storage/' . $santri->bukti_daftar) }}" target="_blank" id="preview-bukti_daftar"
+                                        class="d-block">📄 Lihat File Bukti Pembayaran</a>
                                 @else
-                                    <a id="preview-kk" class="d-none" target="_blank">📄 Lihat File KK</a>
-                                @endif --}}
+                                    <a id="preview-bukti_daftar" class="d-none" target="_blank">📄 Lihat File Bukti Pembayaran</a>
+                                @endif
                             </div>
                         </div>
                     </div>
