@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PengumumanController;
 
 Route::get('/', function () {
-    return view('frontend.home');
+    return view('frontend.home2');
 });
 
 // Route::get('/dashboard', function () {

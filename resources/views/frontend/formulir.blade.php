@@ -1,33 +1,12 @@
-@extends('frontend.layouts.app')
+@extends('frontend.baim.app')
 
 @section('content')
 <div class="container my-5">
     <div class="row justify-content-center">
         <div class="col-lg-10">
 
-            <div class="sidebar-widget registration-form shadow-sm p-4 border rounded" data-aos="fade-left" data-aos-delay="200">
+            <div class="sidebar-widget registration-form shadow-sm p-4 border rounded" style="padding-top: 80px" data-aos="fade-left" data-aos-delay="200">
                 <h3 class="mb-4 text-center">Pendaftaran Santri Baru</h3>
-
-                {{-- SweetAlert --}}
-                {{-- @if(session('success'))
-                    <script>
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Berhasil',
-                            text: '{{ session("success") }}',
-                            confirmButtonColor: '#3085d6',
-                        });
-                    </script>
-                @elseif(session('error'))
-                    <script>
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Gagal',
-                            text: '{{ session("error") }}',
-                            confirmButtonColor: '#d33',
-                        });
-                    </script>
-                @endif --}}
 
                 <form method="POST" action="{{ route('santri.store') }}" enctype="multipart/form-data">
                     @csrf

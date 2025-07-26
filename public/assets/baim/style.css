@@ -1,0 +1,402 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 20px;
+  font-size: 15px;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #e5efe7b4;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.layar-dalam {
+  width: 1000px;
+  margin: auto;
+}
+
+.layar-penuh {
+  width: 100%;
+}
+
+/* Navigasi */
+nav {
+  z-index: 100;
+  color: #fff;
+  text-align: center;
+  position: fixed;
+  border-bottom: 2px solid #e7eae8;
+  line-height: 60px;
+  width: 100%;
+  transition: background-color 0.5s ease;
+}
+
+nav.putih {
+  background-color: #fefffd;
+}
+
+nav .logo {
+  float: left;
+  position: relative;
+  line-height: 100px;
+  text-align: center;
+}
+
+nav .logo img {
+  vertical-align: middle;
+  width: 250px;
+}
+
+nav .menu {
+  float: right;
+  height: 60px;
+  max-width: 600px;
+}
+
+nav .menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav .menu ul li {
+  float: left;
+  line-height: 60px;
+}
+
+nav ul li a {
+  color: #794040;
+  padding: 0px 16px;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+nav.putih .tombol-menu .garis {
+  background-color: #333;
+}
+
+nav.putih ul li a {
+  color: #333;
+}
+
+/* Header */
+header {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  z-index: 2;
+}
+
+header video {
+  position: absolute;
+  top: -10%;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 120vh;
+  z-index: -100;
+}
+
+header .intro {
+  z-index: 100%;
+  color: #f9f5f5;
+  text-align: center;
+  position: relative;
+  top: 50%;
+}
+
+header .intro h3 {
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.tombol {
+  background-color: #06a806;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0 20px;
+  font-size: 15px;
+  border-radius: 4px;
+}
+
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  opacity: 50%;
+  z-index: -1;
+}
+
+.tombol-menu {
+  position: absolute;
+  top: 1.7rem;
+  right: 1rem;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+}
+
+.tombol-menu .garis {
+  height: 3px;
+  background-color: #fff;
+}
+
+/* Section umum */
+section {
+  padding: 50px 0;
+  text-align: center;
+}
+
+section h3 {
+  font-size: 30px;
+}
+
+section h3::after {
+  content: "";
+  border-bottom: 5px solid #1dc44c;
+  width: 52px;
+  display: block;
+  margin: 20px auto;
+}
+
+section p.ringkasan {
+  font-style: italic;
+  font-size: 18px;
+  color: #c9ccc2;
+}
+
+section .konten-isi p {
+  font-style: normal;
+}
+
+section.abuabu {
+  background-color: #05a405;
+}
+
+section#gallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+section#gallery div {
+  padding: 10px;
+}
+
+section#gallery div img {
+  height: 100px;
+  border-radius: 5px;
+}
+
+section#gallery div img:hover {
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.1);
+}
+
+/* Quote */
+section.quote {
+  background: url("asset/abah ibuk.jpg") no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  color: #dee4d5;
+  font-size: 20px;
+  font-style: italic;
+  padding: 100px;
+}
+
+section.quote .layar-dalam p {
+  display: inline;
+  background: url("asset/quote-icon.png") no-repeat;
+  padding: 40px;
+}
+
+/* Tim dan support */
+.support,
+.tim {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.support div,
+.tim div {
+  width: 26%;
+}
+
+.support h6,
+.tim h6 {
+  margin: 20px 0 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.support img {
+  width: 50px;
+}
+
+.tim img {
+  width: 100%;
+  box-shadow: 0px -10px 30px #07a935;
+  border-radius: 5px;
+}
+
+/* BLOG: kotak brosur/gambar */
+.box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.blog .area,
+.area {
+  width: 30%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: transparent;
+  box-sizing: border-box;
+}
+
+.area .gambar {
+  width: 100%;
+  padding-top: 133.33%; /* 4:3 aspect ratio = 3/4 * 100 */
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #05a405; /* opsional: warna dasar di dalam kotak */
+  border-radius: 10px;
+  position: relative;
+  
+}
+
+
+/* Footer */
+footer {
+  padding: 50px 0;
+  background-color: #faf7f6a8;
+  color: #494343;
+}
+
+footer .layar-dalam {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .layar-dalam div {
+  width: 20%;
+}
+
+footer .layar-dalam h5 {
+  margin-top: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+footer .layar-dalam .copyright {
+  width: 100%;
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid #36ca36a8;
+  text-align: center;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 991.98px) {
+  .layar-dalam {
+    width: 90%;
+  }
+
+  nav .menu ul {
+    display: none;
+    margin-top: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  nav .menu ul li {
+    width: 100%;
+    border-bottom: 1px solid #0f9b4e;
+    background-color: #f2eded;
+    line-height: 40px;
+  }
+
+  nav .menu ul li a {
+    color: #190f0f;
+  }
+
+  .tombol-menu {
+    display: flex;
+  }
+
+  .support {
+    display: block;
+  }
+
+  .support div {
+    width: 100%;
+    padding-bottom: 30px;
+  }
+
+  .blog .area,
+  .area {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .blog .area,
+  .area {
+    width: 100%;
+  }
+}
+.alur-pendaftaran h3 {
+  text-align: center;
+  color: white; /* atau warna lain sesuai kebutuhan */
+}
+
+.alur-pendaftaran  {
+  text-align: left;
+  color: white;
+}
+.blog h3 {
+  text-align: center;
+  color: white; /* atau warna lain sesuai kebutuhan */
+}
+
+.blog p {
+  text-align: left;
+  color: white;
+}
+.brosur-pendaftaran{
+  color: white;
+}
+.informasi{
+  color: white;
+}
